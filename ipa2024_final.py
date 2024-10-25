@@ -71,28 +71,28 @@ while True:
 
     # check if the text of the message starts with the magic character "/" followed by your studentID and a space and followed by a command name
     #  e.g.  "/66070123 create"
-    if message.startswith("<!!!REPLACEME!!!>"):
+    if message.startswith("/65070236"):
 
         # extract the command
-        command = <!!!REPLACEME!!!>
+        command = message.split(" ", 1)[1]
         print(command)
 
 # 5. Complete the logic for each command
 
         if command == "create":
-            <!!!REPLACEME with code for create command!!!>     
+            responseMessage = restconf_final.create()    
         elif command == "delete":
-            <!!!REPLACEME with code for delete command!!!>
+            responseMessage = restconf_final.delete()    
         elif command == "enable":
-            <!!!REPLACEME with code for enable command!!!>
+            responseMessage = restconf_final.enable()
         elif command == "disable":
-            <!!!REPLACEME with code for disable command!!!>
+            responseMessage = restconf_final.disable()
         elif command == "status":
-            <!!!REPLACEME with code for status command!!!>
-         elif command == "gigabit_status":
-            <!!!REPLACEME with code for gigabit_status command!!!>
+            responseMessage = restconf_final.status()
+        elif command == "gigabit_status":
+            responseMessage = restconf_final.gig_status()
         elif command == "showrun":
-            <!!!REPLACEME with code for showrun command!!!>
+            responseMessage = restconf_final.showrun()
         else:
             responseMessage = "Error: No command or unknown command"
         
