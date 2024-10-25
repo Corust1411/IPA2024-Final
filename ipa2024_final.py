@@ -15,14 +15,14 @@ import restconf_final
 #######################################################################################
 # 2. Assign the Webex access token to the variable ACCESS_TOKEN using environment variables.
 
-ACCESS_TOKEN = os.environ.get('webex_token')
+ACCESS_TOKEN = os.environ.get('WEBX_TOKEN')
 
 #######################################################################################
 # 3. Prepare parameters get the latest message for messages API.
 
 # Defines a variable that will hold the roomId
 roomIdToGetMessages = (
-    "<!!!REPLACEME with roomID of the IPA2024 Webex Teams room!!!>"
+    os.environ.get('ROOM_ID')
 )
 
 while True:
