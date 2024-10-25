@@ -1,17 +1,21 @@
 #######################################################################################
-# Yourname:
-# Your student ID:
-# Your GitHub Repo: 
+# Yourname: Sirapob Darunpobtanakul
+# Your student ID: 65070236
+# Your GitHub Repo: https://github.com/Corust1411/IPA2024-Final
 
 #######################################################################################
 # 1. Import libraries for API requests, JSON formatting, time, os, (restconf_final or netconf_final), netmiko_final, and ansible_final.
 
-<!!!REPLACEME with code for libraries>
+import requests
+import json
+import time
+import os
+import restconf_final
 
 #######################################################################################
 # 2. Assign the Webex access token to the variable ACCESS_TOKEN using environment variables.
 
-ACCESS_TOKEN = os.environ."<!!!REPLACEME with os.environ method and environment variable!!!>"
+ACCESS_TOKEN = os.environ.get('webex_token')
 
 #######################################################################################
 # 3. Prepare parameters get the latest message for messages API.
