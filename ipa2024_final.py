@@ -15,7 +15,9 @@ import restconf_final
 #######################################################################################
 # 2. Assign the Webex access token to the variable ACCESS_TOKEN using environment variables.
 
-ACCESS_TOKEN = os.environ.get('WEBX_TOKEN')
+webex_token = os.environ.get('WEBX_TOKEN')
+
+access_token = f'Bearer {webex_token}'
 
 #######################################################################################
 # 3. Prepare parameters get the latest message for messages API.
@@ -35,7 +37,7 @@ while True:
     getParameters = {"roomId": roomIdToGetMessages, "max": 1}
 
     # the Webex Teams HTTP header, including the Authoriztion
-    getHTTPHeader = {"Authorization": <!!!REPLACEME!!!>}
+    getHTTPHeader = {"Authorization": access_token}
 
 # 4. Provide the URL to the Webex Teams messages API, and extract location from the received message.
     
@@ -43,9 +45,9 @@ while True:
     # - Use the GetParameters to get only the latest message.
     # - Store the message in the "r" variable.
     r = requests.get(
-        "<!!!REPLACEME with URL of Webex Teams Messages API!!!>",
-        params=<!!!REPLACEME with HTTP parameters!!!>,
-        headers=<!!!REPLACEME with HTTP headers!!!>,
+        "https://webexapis.com/v1/messages",
+        params=getParameters,
+        headers=getHTTPHeader,
     )
     # verify if the retuned HTTP status code is 200/OK
     if not r.status_code == 200:
